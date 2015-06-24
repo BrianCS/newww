@@ -14,6 +14,7 @@ browse.packagesByKeyword = function(request, reply) {
   }
   var options = {
     keyword: context.keyword,
+    title: 'packages with keyword \'' + context.keyword + '\'',
     count: defaultCount,
     offset: Math.abs(parseInt(request.query.offset, 10)) || 0
   }
@@ -31,6 +32,7 @@ browse.mostDependedUponPackages = function(request, reply) {
   var context = {}
   var options = {
     sort: 'dependents',
+    title: 'most depended upon packages',
     count: defaultCount,
     offset: Math.abs(parseInt(request.query.offset)) || 0
   }
@@ -50,6 +52,7 @@ browse.packageDependents = function(request, reply) {
   }
   var options = {
     dependency: context.package,
+    title: 'packages depending on ' + context.package,
     count: defaultCount,
     offset: Math.abs(parseInt(request.query.offset)) || 0
   }
@@ -67,6 +70,7 @@ browse.mostStarredPackages = function(request, reply) {
   var context = {}
   var options = {
     sort: 'stars',
+    title: 'most starred packages',
     count: defaultCount,
     offset: Math.abs(parseInt(request.query.offset)) || 0
   }
@@ -84,6 +88,7 @@ browse.recentlyUpdatedPackages = function(request, reply) {
   var context = {}
   var options = {
     sort: 'modified',
+    title: 'recently updated packages',
     count: defaultCount,
     offset: Math.abs(parseInt(request.query.offset)) || 0
   }
@@ -101,6 +106,7 @@ browse.recentlyCreatedPackages = function(request, reply) {
   var context = {}
   var options = {
     sort: 'created',
+    title: 'recently created packages',
     count: defaultCount,
     offset: Math.abs(parseInt(request.query.offset)) || 0
   }

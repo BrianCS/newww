@@ -63,7 +63,7 @@ module.exports = function (request, reply) {
     request.metrics.metric({ name: 'search', search: request.query.q });
 
     merge(opts, {
-      title: 'results for ',
+      title: 'results for '+request.query.q,
       page: page,
       q: request.query.q,
       results: response.hits.hits,
