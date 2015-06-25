@@ -50,7 +50,7 @@ browse.mostDependedUponPackages = function(request, reply) {
 browse.packageDependents = function(request, reply) {
   var context = {
     package: request.params.package,
-    title: 'packages depending on ' + context.package
+    title: 'packages depending on ' + request.params.package
   }
   var options = {
     dependency: context.package,
